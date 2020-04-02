@@ -1,0 +1,5 @@
+processing expressions from Test-03.txt ...
+2*3 ==> 6
+a=3 ==> a = 3
+b=4 ==> b = 4
+a*b*a ==> 36

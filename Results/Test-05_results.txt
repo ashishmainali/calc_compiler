@@ -1,0 +1,7 @@
+processing expressions from Test-05.txt ...
+20%3 ==> 2
+a=31 ==> a = 31
+b=4 ==> b = 4
+c=2 ==> c = 2
+a%b ==> 3
+a%b%c ==> 1

@@ -1,0 +1,5 @@
+processing expressions from Test-02.txt ...
+1-2 ==> -1
+a=2 ==> a = 2
+b=3 ==> b = 3
+a-b-a ==> -3

@@ -1,0 +1,247 @@
+#----------------------------------------------------------------------
+Programming Assignment 02
+
+#----------------------------------------------------------------------
+Purpose:
+
+  * Demonstrate understanding of lexical and syntactic analysis
+    fundamentals.
+
+  * Demonstrate working Ply environment.
+
+  * Demonstrate (simple) Python programming skills.
+
+#----------------------------------------------------------------------
+Background:
+
+  * The template included with this assignment shows the essential
+    structure for lexical and syntactic analysis stages of a
+    simple Ply-based expression evaluator.
+
+  * The template has only the binary + operator defined.  The
+    binary -, *, /, %, and ^ operators must be added.  The unary
+    - and + operators must be added.
+
+  * The new operators have the standard precedence and
+    associativity used in mathematics.  (We've gone over this in
+    class.)
+
+  * The template has only INTEGER defined.  REAL must be added.
+
+
+  * NOTE:  These are the operators we discussed in class for our
+           ASL language.  That's OK as this is supposed to be a
+           simple exercise just to get everyone up to speed on
+           Ply.  We'll go back to our ASL definition in future
+           homeworks.
+
+#----------------------------------------------------------------------
+Tasks:
+
+  1. Download HMWK_02_dalioba.zip from Canvas.
+
+  2. Unzip the file somewhere convenient.
+
+  3. Change 'dalioba' in the name of the directory to your NetID.
+     (Your NetID is three letters followed by four or five digits.
+      The directory name will now be something like
+      'hmwk_02_abc1234'.)
+
+  4. Look in that directory.
+
+  5. Change the header lines in the provided Python file so that
+     they match your information as follows:
+
+      -- Line 1:  Family name first, then a comma, then
+                  personal name.
+
+      -- Line 2:  Your NetID.
+
+      -- Line 3:  The date you edited the file in the format
+                  YYYY-MM-DD.
+
+     These must remain the first three lines of each file.
+
+  6. Run the given template hmwk_02.py using Test-01.txt as input.
+     You should see the following.
+
+$ python hmwk_02.py Test-01.txt
+processing expressions from Test-01.txt ...
+1+2 ==> 3
+a=2 ==> a = 2
+b=3 ==> b = 3
+a+b+a ==> 7
+c ==> Undefined name 'c'
+0
+$
+
+     This test uses only integers and binary addition.  DO NOT
+     proceed further until you have this test working perfectly.
+     If you run into difficulties, it (probably) means that you
+     do not have Python and/or Ply properly installed.  The
+     template code has been tested on this example and it does
+     work properly.
+
+  IMPORTANT -- IMPORTANT -- IMPORTANT -- IMPORTANT -- IMPORTANT
+
+  Do NOT proceed further until you have step 6 working PERFECTLY.
+  You will only cause yourself immense grief otherwise.
+
+  IMPORTANT -- IMPORTANT -- IMPORTANT -- IMPORTANT -- IMPORTANT
+
+  Do not try to add all processing at once.  Instead add only
+  one operator at a time and get it working PERFECTLY before
+  moving to the next item.
+
+  There's a test case for each operator that is independent of all
+  other operators.  This allows you to test each operator on its
+  own.
+
+  The easiest order to add the operators in is binary minus,
+  binary multiply, binary divide, binary modulus, binary
+  exponentiation, unary minus, unary plus.
+
+  Once the operators are all added and are working PERFECTLY with
+  integers, then add REAL.
+
+  IMPORTANT -- IMPORTANT -- IMPORTANT -- IMPORTANT -- IMPORTANT
+
+  7. Add token categories for the required new operators and REAL
+     by updating the definition of tokens.  (There's a TODO on
+     line 10.)
+
+  8. Add token representations for the required new operators by
+     making the required t_<whatever> definitions.  (There's a
+     TODO on line 17.)
+
+  9. Add a token routine for REAL.  (There's a TODO on line 25.)
+
+ 10. Add the required precedence and associativity information for
+     the operators.  (There's a TODO on line 50.)
+
+ 11. Update the p_expression_binop() syntactic function for the
+     new binary operators.  (There's a TODO on line 68.)
+
+ 12. Create a p_expression_unop() syntactic function for the new
+     unary operators.  (Don't forget to assign the correct
+     precedence for these unary operators using the appropriate
+     %prec directives in the production rule definition.)
+     (There's a TODO on line 74.)
+
+ 13. Update the p_expression_number() routine to deal with REAL.
+     (There's a TODO on line 81).
+
+ 14. Test your work by running it against the test cases given
+     in Tests/.  You should get output IDENTICAL to the provided
+     result files Results/.
+
+     Tests 1 through 8 are for individual operators using integers
+     only.  These are useful when you are implementing the
+     operators one-by-one.  Tests 10 through 17 are for individual
+     operators but with real instead of integer parameters.
+
+     The other tests are more complex (involving multiple
+     operators) and should be run only after the rest of the work
+     is complete.
+
+  IMPORTANT -- IMPORTANT -- IMPORTANT -- IMPORTANT -- IMPORTANT
+
+  Your output should be IDENTICAL to that in the corresponding
+  results file.  If it's not -- even off by a SINGLE character --
+  stop and investigate why.  Do not proceed to any additional
+  work until you identify why the discrepancy occurred and fix it.
+
+  IMPORTANT -- IMPORTANT -- IMPORTANT -- IMPORTANT -- IMPORTANT
+
+#----------------------------------------------------------------------
+Submission:
+
+Make a zipfile of your 'hmwk_02_abc1234' directory (where
+'abc1234' is replaced with YOUR NetID) and submit it on Canvas
+as your results for this assignment.
+
+Your submission should be a zipfile that has exactly one item in
+it, a directory named 'hmwk_02_abc1234' (where 'abc1234' is YOUR
+NetID).  Inside that directory should be hmwk_02.py.
+
+#----------------------------------------------------------------------
+Hints:
+  1. Ensure your program compiles and runs correctly.  Not
+     compiling or not generating the correct output will cost you
+     points.
+
+     Ensure your output for each test is the same as the
+     corrsponding results file.  It must match EXACTLY.
+
+     After you write your programs, use diff to compare your
+     output to the supplied results files.  It must match EXACTLY
+     or you will be penalized points.
+
+     ('EXACTLY' means character-by-character the same.)
+
+  2. Ensure that you update the three header lines in the source
+     file with YOUR name (family name first, then a comma, then
+     your personal name), YOUR NetID, and the date you edit the
+     file (in the format YYYY-MM-DD).  The header lines must be
+     the first three lines in the file.
+
+     Not updating the header lines properly will cost you points.
+
+  3. This is not a lot of work.  There are only six (6) token
+     categories to add for the Line 12 TODO.
+
+     For the Line 19 TODO, there are five (5) t_ specifications.
+
+     For the Line 27 TODO, it's four (4) lines of code.  (This
+     routine is very similar to t_INTEGER().)
+
+     For the Line 52 TODO, you have to update what's there and add
+     three additional lines of data.
+
+     For the Line 71 TODO, it's five (5) lines to the production
+     rule and five (5) lines of Python processing code.
+
+     For the Line 77 TODO, p_expression_unop() is five (5) lines
+     of code.
+
+     For the Line 84 TODO, it's one (1) line to the production
+     rule and two (2) lines of Python processing code.
+
+  4. After you complete your work, make up some test cases of your
+     own to ensure that your scanning and parsing really matches
+     the required precedence and associativity.  The test cases in
+     Tests are useful, but they are NOT comprehensive.  Make up
+     some more of your own.
+
+     It's OK to share test cases and expected results files with
+     other students, but do NOT violate the Honor Code as regards
+     your programming work.  Do NOT share details of your
+     programming, review other students' work, etc.
+
+  5. Ensure your submission to Canvas is packaged EXACTLY as
+     described above.
+
+      -- Your submission should be a ZIP FILE (not a tar, rar, gz,
+         or any other kind of compressed file).
+
+      -- The zip file should be named 'hmwk_02_abc1234.zip' (with
+         'abc1234' replaced with YOUR NetID).
+
+      -- This zip file should have ONE item in it, a directory
+         named 'hmwk_02_abc1234'  (with 'abc1234' replaced with
+         YOUR NetID).
+
+      -- Your source file hmwk_02.py should be in that directory.
+
+     Submissions in the wrong format score ZERO points.
+
+  6. After you submit your zip file on Canvas, download it from
+     Canvas and check that your submission is in the proper
+     format, that the programs run and produce the correct output,
+     and that you updated the header lines correctly.
+
+  7. Are you CERTAIN you complied with all of these nit-picking
+     instructions?  Really?  Maybe you ought to check just one
+     more time. :)
+
+#----------------------------------------------------------------------
