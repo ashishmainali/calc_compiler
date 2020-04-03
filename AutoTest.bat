@@ -1,5 +1,6 @@
 @echo off
 set loopcount=18
+cd Tests
 :loop
 if %loopcount% GEQ 10 goto nextloop
 echo python3 ..\Template\hmwk_02.py Test-0%loopcount%.txt - ..\Results\0%loopcount%.txt
