@@ -37,8 +37,8 @@ t_EXPONENTIATION = r'\^'
 
 # definition for t_REAL here.
 def t_REAL(t):
-    r'([\d+\.]|[\.?\d+]|[\d+\.\d+])([eE][-\+]?\d+)?'
-    # r'\d+\.\d+([eE][-+]?\d+)?'
+    # r'((\d+\.)|(\.\d+)|(\d+\.\d+))([eE][-\+]?\d+)?'
+    r'(((\d+\.\d+)|(\.\d+)|(\d+\.))([eE][-\+]?\d+)?)|(\d+[eE][-\+]?\d+)'
     t.value = float(t.value)
     return t
 
