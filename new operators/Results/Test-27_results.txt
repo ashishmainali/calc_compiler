@@ -1,0 +1,7 @@
+processing expressions from Test-27.txt ...
+"Hi!" ==> 'Hi!'
+"I am a" ==> 'I am a'
+"STRING" ==> 'STRING'
+"literal." ==> 'literal.'
+"Not very" ==> 'Not very'
+"useful yet." ==> 'useful yet.'

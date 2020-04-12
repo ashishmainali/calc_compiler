@@ -1,0 +1,7 @@
+processing expressions from Test-01.txt ...
+1+2 ==> 3
+a=2 ==> a = 2
+b=3 ==> b = 3
+a+b+a ==> 7
+c ==> Undefined name 'c'
+0

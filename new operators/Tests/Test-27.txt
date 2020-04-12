@@ -1,0 +1,6 @@
+"Hi!"
+"I am a"
+"STRING"
+"literal."
+"Not very"
+"useful yet."

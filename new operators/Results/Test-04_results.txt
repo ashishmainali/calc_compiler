@@ -1,0 +1,5 @@
+processing expressions from Test-04.txt ...
+2/3 ==> 0.6666666666666666
+a=3 ==> a = 3
+b=4 ==> b = 4
+a/b/a ==> 0.25
